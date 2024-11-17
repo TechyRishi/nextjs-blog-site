@@ -11,7 +11,8 @@ npm install --legacy-peer-deps
 ### if only 
 
 ```bash 
-npm install ```
+npm install
+```
 
 ### works fine use that
 
