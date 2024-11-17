@@ -8,7 +8,9 @@ npm install --legacy-peer-deps
 ```
 
 ### note : as here latest version of next-js is used so as of now many dependencies not supported so using here '--legacy-peer-deps'\
-### if only npm install works fine use that
+### if only 
+```bash npm install ```
+works fine use that
 
 ### Run the development server:
 
