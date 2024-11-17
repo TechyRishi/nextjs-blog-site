@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/Header";
+import { ThemeProvider } from "next-themes";
+import ThemeComponent from "./components/ThemeComponent";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,12 +27,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    // added suppressHydrationWarning to silence the hydration mismatch warning
+    // read more on https://nextjs.org/docs/messages/react-hydration-error
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        {children}
+        <ThemeProvider>
+          <ThemeComponent>
+            <Header />
+            {children}
+          </ThemeComponent>
+        </ThemeProvider>
       </body>
     </html>
   );
